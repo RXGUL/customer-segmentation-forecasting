@@ -1,0 +1,9 @@
+rfm_segment,n_customers,avg_recency,avg_frequency,avg_monetary,total_revenue
+Champions,683,63.88,25.07,6063.03,4141049.99
+Loyal Customers,414,176.63,10.41,1436.33,594642.24
+At Risk,310,477.06,8.85,984.33,305141.53
+Cant Lose Them,359,658.03,3.71,272.69,97894.34
+Recent Customers,190,79.91,1.92,213.64,40590.74
+Promising,85,207.2,3.92,371.13,31545.71
+Lost,240,854.54,1.53,128.72,30892.04
+Hibernating,219,323.19,1.39,113.66,24891.9

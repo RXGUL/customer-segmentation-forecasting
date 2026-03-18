@@ -1,0 +1,3 @@
+cluster,n_customers,avg_recency,avg_frequency,avg_monetary,total_revenue,revenue_share_%,segment_label
+0,1265,144.77,18.31,3902.31,4936426.21,93.7,Loyal Customers
+1,1235,507.21,3.01,267.39,330222.28,6.3,Hibernating / Lost
