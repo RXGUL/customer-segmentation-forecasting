@@ -1,84 +1,74 @@
-# Customer Segmentation & Sales Forecasting
+# Customer Segmentation & Forecasting
 
-> ML-powered pipeline combining **RFM analysis**, **K-Means clustering**, and **Facebook Prophet** forecasting to segment customers, personalise marketing strategies, and predict future revenue with 91% accuracy (MAPE ≈ 9%).
-
----
-
-## Project Overview
-
-This project applies unsupervised machine learning and time-series forecasting to a retail transaction dataset, delivering three core analytical products:
-
-1. **RFM Customer Segmentation** — classifies customers by Recency, Frequency, and Monetary value into 10 actionable segments
-2. **K-Means Clustering** — groups customers into 4 data-driven behavioural clusters for targeted marketing
-3. **Sales Forecasting** — uses Facebook Prophet to forecast 26 weeks of future revenue with seasonality decomposition
-
-### Business Impact
-- Enables **personalised marketing** for each customer segment (champions vs. at-risk vs. lost)
-- **25% conversion lift** through RFM-informed targeting
-- **18% forecast accuracy improvement** over baseline moving-average method
-- Stakeholder-ready Tableau exports for KPI dashboards
+## Overview
+This project looks at customer data to understand how different types of users behave and how their activity changes over time. The idea was to move beyond just looking at raw numbers and instead identify patterns that could actually help in decision-making.
 
 ---
 
-## Tech Stack
+## What this project is about
+Businesses often have a lot of customer data but struggle to use it effectively. In this project, I focused on:
+- Grouping customers based on their behaviour  
+- Understanding how different segments contribute to overall activity  
+- Observing patterns that could be useful for planning or targeting  
 
-| Layer | Tools |
-|---|---|
-| Data Processing | Python · Pandas · NumPy |
-| Machine Learning | Scikit-learn (K-Means, PCA, StandardScaler) |
-| Forecasting | Facebook Prophet |
-| Visualisation | Matplotlib · Seaborn |
-| Model Persistence | Joblib |
-| Environment | Jupyter Notebooks |
+---
+
+## How the analysis was done
+
+### 1. Data preparation
+- Cleaned the dataset and handled missing values  
+- Made sure the data was consistent and usable  
+
+### 2. Feature creation
+- Built additional fields to better capture customer behaviour  
+- Created simple indicators for activity, value, and engagement  
+
+### 3. Segmentation
+- Grouped customers based on similarity in behaviour  
+- Looked at how different segments differ from each other  
+
+### 4. Trend analysis
+- Checked how customer activity changes over time  
+- Identified patterns that could be useful for forecasting  
+
+---
+
+## Key takeaways
+
+- A small group of customers tends to contribute a large portion of activity  
+- Some segments show consistent behaviour, while others are more irregular  
+- Patterns in customer activity can give a rough idea of future trends  
+- Segmentation makes it easier to understand and compare different user groups  
+
+---
 
 ---
 
 ## Project Structure
 
 ```
-customer-segmentation-forecasting/
 ├── data/
-│   ├── raw/                        ← transactions.csv (generated)
-│   └── processed/
-│       ├── rfm_scores.csv          ← RFM values + segment labels
-│       └── rfm_clustered.csv       ← RFM with K-Means cluster assignments
-├── models/
-│   ├── kmeans_model.pkl            ← trained K-Means model
-│   └── scaler.pkl                  ← StandardScaler for inference
 ├── notebooks/
-│   └── customer_segmentation_forecasting.ipynb
 ├── src/
-│   ├── generate_data.py            ← realistic e-commerce data generator
-│   ├── rfm_analysis.py             ← RFM computation + scoring + labelling
-│   ├── clustering.py               ← K-Means fitting + elbow/silhouette + profiles
-│   └── forecasting.py              ← Prophet pipeline + metrics
-├── visualizations/                 ← 10 publication-quality charts
+├── outputs/
 ├── reports/
-│   └── key_findings.md             ← auto-generated findings + recommendations
-├── run_analysis.py                 ← single-command end-to-end runner
-└── requirements.txt
+├── visualizations/
+├── README.md
+├── run_analysis.py
 ```
 
 ---
 
 ## Quick Start
 
+Clone the repository:
 ```bash
-# 1. Clone and install
-git clone https://github.com/YOUR_USERNAME/customer-segmentation-forecasting.git
+git clone https://github.com/RXGUL/customer-segmentation-forecasting.git
 cd customer-segmentation-forecasting
-pip install -r requirements.txt
-
-# 2. Run complete pipeline
-python run_analysis.py
-
-# 3. Interactive notebook
-jupyter notebook notebooks/customer_segmentation_forecasting.ipynb
-```
 
 ---
 
-## Methodology
+## How the approach was built
 
 ### Step 1 — RFM Analysis
 Each customer is scored on three dimensions:
@@ -97,7 +87,7 @@ Customers are segmented into 10 named groups: Champions, Loyal Customers, At Ris
 - K selection: Elbow method + Silhouette analysis → **k = 4**
 - 2D visualisation via PCA projection
 
-**Cluster Profiles:**
+**What each customer group looks like:**
 
 | Cluster | Label | Characteristics |
 |---|---|---|
@@ -115,7 +105,7 @@ Customers are segmented into 10 named groups: Champions, Loyal Customers, At Ris
 
 ---
 
-## Key Results
+## What stood out from the analysis
 
 | Metric | Value |
 |---|---|
@@ -140,7 +130,7 @@ Customers are segmented into 10 named groups: Champions, Loyal Customers, At Ris
 
 ---
 
-## Visualisations Generated
+## Visual insights
 
 | # | File | Insight |
 |---|------|---------|
